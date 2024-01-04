@@ -9,3 +9,6 @@ export {default as SectionTitle} from './SectionTitle'
 export {default as Filters} from './Filters'
 export {default as PaginationContainer} from './PaginationContainer'
 export {default as ProductsContainer} from './ProductsContainer'
+export {default as CheckoutFrom} from './CheckoutFrom'
+export {default as CartTotals} from "./CartTotals"
+export {default as OrdersList} from "./OrdersList"

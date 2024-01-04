@@ -10,17 +10,8 @@ import { Link } from "react-router-dom";
 
 
 const Cart = () => {
-  const user = null
-  const cartItems = useSelector((state) => state.cartState.cartItems);
+  const user = useSelector(state => state.userState.user)
   const numItemsInCart = useSelector((state)=> state.cartState.numItemsInCart)
-  const dispatch = useDispatch();
-
-  const removeFromCart = (cartID) => {
-    dispatch(removeItem({ cartID }));
-  };
-  const editItemFromCart =(cartID,amount)=>{
-    dispatch(editItem({cartID, amount }))
-  }
 
   if(numItemsInCart === 0){
     return <SectionTitle text="Your cart is empty" />
@@ -37,7 +28,7 @@ const Cart = () => {
           <CartTotals />
           {user ? <Link to='/checkout' className="btn btn-primary btn-block mt-8">
             Proceed to checkout
-          </Link> : <Link to="/login">
+          </Link> : <Link to="/login" className="btn btn-primary btn-block mt-8">
           please login in
           </Link> }
         </div>
