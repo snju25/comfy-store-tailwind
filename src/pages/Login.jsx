@@ -28,12 +28,10 @@ const Login = () => {
   const loginAsGuestUser = async () =>{
     try{
       const response = await customFetch.post("/auth/local", {identifier: "test@test.com", password: "secret"})
-      console.log(response);
       dispatch(loginUser(response.data))
       toast.success("welcome guest user")
       navigate("/")
     }catch(error){
-      console.log(error);
       toast.error("wrong")
       return null
     }
